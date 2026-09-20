@@ -1,11 +1,12 @@
 import os
+from pathlib import Path
 
 import requests
 import telebot
 from dotenv import load_dotenv
 from telebot import types
 
-load_dotenv()
+load_dotenv(Path(__file__).parent / ".env")
 
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-20b")
